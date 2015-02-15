@@ -59,7 +59,9 @@ If (Test-Path $qtBuildScriptFile)
   {
   Remove-Item $qtBuildScriptFile
   }
-$url = ('https://raw.githubusercontent.com/chrismullins/qt-easy-build/' + $qtBuildScriptVersion + '/cmake/' + $qtBuildScriptName)
+# $url = ('https://raw.githubusercontent.com/chrismullins/qt-easy-build/' + $qtBuildScriptVersion + '/cmake/' + $qtBuildScriptName)
+$url = ('https://raw.githubusercontent.com/chrismullins/qt-easy-build/4.8.6-patch-qt-vs2012/cmake/build_qt_with_openssl.cmake')
+
 Write-Host "Download $url"
 Download-File $url $qtBuildScriptFile
 
