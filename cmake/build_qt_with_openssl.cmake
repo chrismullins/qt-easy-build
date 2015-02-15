@@ -177,13 +177,20 @@ _extract_archive(${QT_FILE} ${QT_BUILD_DIR})
 _extract_archive(${OPENSSL_FILE} ${OPENSSL_INSTALL_DIR})
 
 # Patch Qt
+set(HashSet_H_URL https://raw.githubusercontent.com/chrismullins/qt-easy-build/4.8.6-patch-qt-vs2012/patches/HashSet.h)
+set(HashSet_H_MD5 1bbcfe64e935e9e79cf793e0de338f1c)
+set(MathExtras_H_URL https://raw.githubusercontent.com/chrismullins/qt-easy-build/4.8.6-patch-qt-vs2012/patches/MathExtras.h)
+set(MathExtras_H_MD5 73700427ade27e334930b6c3cf872b61)
+_download_file(${HashSet_H_URL} "HashSet.h" ${HashSet_H_MD5})
+_download_file(${MathExtras_H_URL} "MathExtras.h" ${MathExtras_H_MD5})
 file(COPY 
-  ${CMAKE_CURRENT_SOURCE_DIR}/patches/HashSet.h
-  DESTINATION ${QT_BUILD_DIR}/src/3rdparty/webkit/Source/JavaScriptCore/wtf/hashset.h
+  ${CMAKE_CURRENT_SOURCE_DIR}/HashSet.h
+  DESTINATION ${QT_BUILD_DIR}/src/3rdparty/webkit/Source/JavaScriptCore/wtf/
   )
 file(COPY
-  ${CMAKE_CURRENT_SOURCE_DIR}/patches/MathExtras.h
-  DESTINATION ${QT_BUILD_DIR}/src/3rdparty/javascriptcore/JavaScriptCore/wtf/)
+  ${CMAKE_CURRENT_SOURCE_DIR}/MathExtras.h
+  DESTINATION ${QT_BUILD_DIR}/src/3rdparty/javascriptcore/JavaScriptCore/wtf/
+  )
 
 # Configure Qt
 set(msg "Configuring Qt")
