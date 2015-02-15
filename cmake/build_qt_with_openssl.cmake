@@ -176,6 +176,15 @@ endfunction()
 _extract_archive(${QT_FILE} ${QT_BUILD_DIR})
 _extract_archive(${OPENSSL_FILE} ${OPENSSL_INSTALL_DIR})
 
+# Patch Qt
+file(COPY 
+  ${CMAKE_CURRENT_SOURCE_DIR}/patches/HashSet.h
+  DESTINATION ${QT_BUILD_DIR}/src/3rdparty/webkit/Source/JavaScriptCore/wtf/hashset.h
+  )
+file(COPY
+  ${CMAKE_CURRENT_SOURCE_DIR}/patches/MathExtras.h
+  DESTINATION ${QT_BUILD_DIR}/src/3rdparty/javascriptcore/JavaScriptCore/wtf/)
+
 # Configure Qt
 set(msg "Configuring Qt")
 set(step_file "${QT_BUILD_DIR}.configure.ok")
