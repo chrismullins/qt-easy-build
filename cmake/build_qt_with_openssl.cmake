@@ -178,9 +178,9 @@ _extract_archive(${OPENSSL_FILE} ${OPENSSL_INSTALL_DIR})
 
 # Patch Qt
 set(HashSet_H_URL https://raw.githubusercontent.com/chrismullins/qt-easy-build/4.8.6-patch-qt-vs2012/patches/HashSet.h)
-set(HashSet_H_MD5 a8585d16d28edab683d87ced8990e295)
+set(HashSet_H_MD5 a69037b2f60fb44f94dfd0fc59fb3d77)
 set(MathExtras_H_URL https://raw.githubusercontent.com/chrismullins/qt-easy-build/4.8.6-patch-qt-vs2012/patches/MathExtras.h)
-set(MathExtras_H_MD5 cd41503c5054dcc1d29c2322cc71975a)
+set(MathExtras_H_MD5 0c81c69662905ff9234b6ace45eeca76)
 get_filename_component(_HashSet_name ${HashSet_H_URL} NAME)
 set(HashSet_H_FILE "${DEST_DIR}/${_HashSet_name}")
 _download_file(${HashSet_H_URL} ${HashSet_H_FILE} ${HashSet_H_MD5})
