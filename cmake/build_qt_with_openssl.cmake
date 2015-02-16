@@ -181,8 +181,12 @@ set(HashSet_H_URL https://raw.githubusercontent.com/chrismullins/qt-easy-build/4
 set(HashSet_H_MD5 1bbcfe64e935e9e79cf793e0de338f1c)
 set(MathExtras_H_URL https://raw.githubusercontent.com/chrismullins/qt-easy-build/4.8.6-patch-qt-vs2012/patches/MathExtras.h)
 set(MathExtras_H_MD5 73700427ade27e334930b6c3cf872b61)
-_download_file(${HashSet_H_URL} "HashSet.h" ${HashSet_H_MD5})
-_download_file(${MathExtras_H_URL} "MathExtras.h" ${MathExtras_H_MD5})
+get_filename_component(_HashSet_name ${HashSet_H_URL} NAME)
+set(HashSet_H_FILE "${DEST_DIR}/${_HashSet_Name}")
+_download_file(${HashSet_H_URL} ${HashSet_H_FILE} ${HashSet_H_MD5})
+get_filename_component(_MathExtras_name ${MathExtras_H_URL} NAME)
+set(MathExtras_H_FILE "${DEST_DIR}/${_MathExtras_name}")
+_download_file(${MathExtras_H_URL} ${MathExtras_H_FILE} ${MathExtras_H_MD5})
 file(COPY 
   ${CMAKE_CURRENT_SOURCE_DIR}/HashSet.h
   DESTINATION ${QT_BUILD_DIR}/src/3rdparty/webkit/Source/JavaScriptCore/wtf/
