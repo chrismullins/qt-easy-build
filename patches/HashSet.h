@@ -1,4 +1,5 @@
 /*
+ * THIS IS A PATCHED FILE
  * Goes in : src/3rdparty/javascriptcore/JavaScriptCore/wtf/HashSet.h
  * Copyright (C) 2005, 2006, 2007, 2008 Apple Inc. All rights reserved.
  *
