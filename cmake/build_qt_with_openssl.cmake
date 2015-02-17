@@ -197,7 +197,7 @@ file(COPY
   )
 
 if(QT_PLATFORM STREQUAL "win32-msvc2012")
-  file(APPEND ${QT_BUILD_DIR}/projects.pro "QMAKE_CXXFLAGS += /FS")
+  file(APPEND ${QT_BUILD_DIR}/projects.pro "CXXFLAGS += /FS")
 endif()
 
 # Configure Qt
