@@ -193,7 +193,7 @@ file(COPY
   )
 file(COPY
   ${CMAKE_CURRENT_SOURCE_DIR}/MathExtras.h
-  DESTINATION ${QT_BUILD_DIR}/src/3rdparty/javascriptcore/JavaScriptCore/wtf/
+  DESTINATION ${QT_BUILD_DIR}/src/3rdparty/webkit/Source/JavaScriptCore/wtf/
   )
 
 # Configure Qt
