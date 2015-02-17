@@ -196,6 +196,10 @@ file(COPY
   DESTINATION ${QT_BUILD_DIR}/src/3rdparty/webkit/Source/JavaScriptCore/wtf/
   )
 
+if(QT_PLATFORM STREQUAL "win32-msvc2012")
+  file(APPEND ${QT_BUILD_DIR}/projects.pro "QMAKE_CXXFLAGS += /FS")
+endif()
+
 # Configure Qt
 set(msg "Configuring Qt")
 set(step_file "${QT_BUILD_DIR}.configure.ok")
